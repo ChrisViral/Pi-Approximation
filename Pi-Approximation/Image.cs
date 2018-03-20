@@ -64,6 +64,10 @@ namespace Pi_Approximation
         }
         #endregion
 
+        #region Methods
+        public void SetPixel(int x, int y, Color colour) => this.Data.SetPixel(x, y, colour);
+        #endregion
+
         #region Operators
         public static implicit operator Bitmap(Image image) => image.Data;
 
