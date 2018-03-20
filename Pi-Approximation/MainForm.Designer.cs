@@ -28,6 +28,7 @@ namespace Pi_Approximation
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.imageBox = new System.Windows.Forms.PictureBox();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.menuButton = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,27 +77,27 @@ namespace Pi_Approximation
             // 
             this.resetButton.Name = "resetButton";
             this.resetButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.resetButton.Size = new System.Drawing.Size(216, 26);
+            this.resetButton.Size = new System.Drawing.Size(211, 26);
             this.resetButton.Text = "Reset";
             // 
             // saveImageButton
             // 
             this.saveImageButton.Name = "saveImageButton";
             this.saveImageButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveImageButton.Size = new System.Drawing.Size(216, 26);
+            this.saveImageButton.Size = new System.Drawing.Size(211, 26);
             this.saveImageButton.Text = "Save image";
             // 
             // aboutButton
             // 
             this.aboutButton.Name = "aboutButton";
-            this.aboutButton.Size = new System.Drawing.Size(216, 26);
+            this.aboutButton.Size = new System.Drawing.Size(211, 26);
             this.aboutButton.Text = "About...";
             // 
             // quitButton
             // 
             this.quitButton.Name = "quitButton";
             this.quitButton.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.quitButton.Size = new System.Drawing.Size(216, 26);
+            this.quitButton.Size = new System.Drawing.Size(211, 26);
             this.quitButton.Text = "Quit";
             // 
             // MainForm
@@ -106,6 +107,7 @@ namespace Pi_Approximation
             this.ClientSize = new System.Drawing.Size(649, 496);
             this.Controls.Add(this.imageBox);
             this.Controls.Add(this.menu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menu;
             this.Name = "MainForm";
             this.Text = "Pi Approximator";
