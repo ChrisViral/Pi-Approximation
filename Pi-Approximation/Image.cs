@@ -65,7 +65,21 @@ namespace Pi_Approximation
         #endregion
 
         #region Methods
-        public void SetPixel(int x, int y, Color colour) => this.Data.SetPixel(x, y, colour);
+        public void SetPixel(int x, int y, Color colour)
+        {
+            while (true)
+            {
+                try
+                {
+                    this.Data.SetPixel(x, y, colour);
+                    return;
+                }
+                catch (InvalidOperationException)
+                {
+                    //Keep retrying until the image is free to be updated
+                }
+            }
+        }
         #endregion
 
         #region Operators

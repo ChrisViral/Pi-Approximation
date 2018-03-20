@@ -147,11 +147,6 @@ namespace Pi_Approximation
             0,
             0,
             0});
-            this.gapBox.Minimum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
             this.gapBox.Name = "gapBox";
             this.gapBox.Size = new System.Drawing.Size(80, 22);
             this.gapBox.TabIndex = 7;
@@ -254,6 +249,7 @@ namespace Pi_Approximation
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "Pi Approximator";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).EndInit();
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();

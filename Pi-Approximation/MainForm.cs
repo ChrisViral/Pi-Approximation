@@ -9,7 +9,7 @@ namespace Pi_Approximation
     public partial class MainForm : Form
     {
         #region Constants
-        private const int imageSize = 600;
+        private const int imageSize = 1000;
         #endregion
 
         #region Fields
@@ -130,10 +130,7 @@ namespace Pi_Approximation
             UpdateLabel();
         }
 
-        private void AboutButton_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void AboutButton_Click(object sender, EventArgs e) => AboutForm.Instance.Show(this);
 
         private void GenerateOnce_CheckedChanged(object sender, EventArgs e)
         {
@@ -168,5 +165,10 @@ namespace Pi_Approximation
 
         private void GapBox_ValueChanged(object sender, EventArgs e) => this.Gap = (int)this.gapBox.Value;
         #endregion
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.Generating) { StartButton_Click(null, null); }
+        }
     }
 }

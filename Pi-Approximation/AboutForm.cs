@@ -1,29 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Pi_Approximation
 {
-    partial class AboutBox1 : Form
+    public sealed partial class AboutForm : Form
     {
-        public AboutBox1()
+        #region Instance
+        public static AboutForm Instance { get; } = new AboutForm();
+        #endregion
+
+        #region Constructors
+        public AboutForm()
         {
             InitializeComponent();
-            this.Text = String.Format("About {0}", AssemblyTitle);
-            this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
-            this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription;
+            this.Text = $"About {this.AssemblyTitle}";
+            this.labelProductName.Text = this.AssemblyProduct;
+            this.labelVersion.Text = $"Version {this.AssemblyVersion}";
+            this.labelCopyright.Text = this.AssemblyCopyright;
+            this.labelCompanyName.Text = this.AssemblyCompany;
+            this.textBoxDescription.Text = this.AssemblyDescription;
         }
+        #endregion
 
         #region Assembly Attribute Accessors
-
         public string AssemblyTitle
         {
             get
@@ -41,24 +41,14 @@ namespace Pi_Approximation
             }
         }
 
-        public string AssemblyVersion
-        {
-            get
-            {
-                return Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            }
-        }
+        public string AssemblyVersion => Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
         public string AssemblyDescription
         {
             get
             {
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    return "";
-                }
-                return ((AssemblyDescriptionAttribute)attributes[0]).Description;
+                return attributes.Length == 0 ? "" : ((AssemblyDescriptionAttribute)attributes[0]).Description;
             }
         }
 
@@ -67,11 +57,7 @@ namespace Pi_Approximation
             get
             {
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyProductAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    return "";
-                }
-                return ((AssemblyProductAttribute)attributes[0]).Product;
+                return attributes.Length == 0 ? "" : ((AssemblyProductAttribute)attributes[0]).Product;
             }
         }
 
@@ -80,11 +66,7 @@ namespace Pi_Approximation
             get
             {
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    return "";
-                }
-                return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
+                return attributes.Length == 0 ? "" : ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
             }
         }
 
@@ -93,13 +75,13 @@ namespace Pi_Approximation
             get
             {
                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    return "";
-                }
-                return ((AssemblyCompanyAttribute)attributes[0]).Company;
+                return attributes.Length == 0 ? "" : ((AssemblyCompanyAttribute)attributes[0]).Company;
             }
         }
+        #endregion
+
+        #region Events
+        private void OkButton_Click(object sender, EventArgs e) => Close();
         #endregion
     }
 }
