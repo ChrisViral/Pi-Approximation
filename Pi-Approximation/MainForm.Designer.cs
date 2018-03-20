@@ -59,21 +59,23 @@ namespace Pi_Approximation
             this.imageBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.imageBox.Location = new System.Drawing.Point(12, 31);
             this.imageBox.Name = "imageBox";
-            this.imageBox.Size = new System.Drawing.Size(594, 594);
+            this.imageBox.Size = new System.Drawing.Size(600, 600);
             this.imageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imageBox.TabIndex = 0;
             this.imageBox.TabStop = false;
             // 
             // menu
             // 
+            this.menu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.menu.Dock = System.Windows.Forms.DockStyle.None;
             this.menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuButton});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(624, 28);
+            this.menu.Size = new System.Drawing.Size(66, 28);
             this.menu.TabIndex = 1;
-            this.menu.Text = "menuStrip1";
             // 
             // menuButton
             // 
@@ -121,9 +123,9 @@ namespace Pi_Approximation
             this.infoBox.Controls.Add(this.generateOnce);
             this.infoBox.Controls.Add(this.dataLabel);
             this.infoBox.Controls.Add(this.infoLabel);
-            this.infoBox.Location = new System.Drawing.Point(12, 637);
+            this.infoBox.Location = new System.Drawing.Point(12, 643);
             this.infoBox.Name = "infoBox";
-            this.infoBox.Size = new System.Drawing.Size(600, 100);
+            this.infoBox.Size = new System.Drawing.Size(606, 100);
             this.infoBox.TabIndex = 2;
             this.infoBox.TabStop = false;
             this.infoBox.Text = "Info";
@@ -238,14 +240,15 @@ namespace Pi_Approximation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 749);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(630, 755);
             this.Controls.Add(this.infoBox);
             this.Controls.Add(this.imageBox);
             this.Controls.Add(this.menu);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menu;
-            this.MinimumSize = new System.Drawing.Size(642, 796);
+            this.MinimumSize = new System.Drawing.Size(648, 802);
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "Pi Approximator";
