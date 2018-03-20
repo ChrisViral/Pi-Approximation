@@ -69,6 +69,10 @@ namespace Pi_Approximation
         {
             while (true)
             {
+                /* Honestly, while this is generally bad practice, this is the quickest way to do this
+                 * without reimplementing PictureBox, since it does not lock on painting and
+                 * does not offer any start/end hooks. This simply keeps trying to edit the bitmap until
+                 * the painting is done and the bits are freed by the PictureBox */
                 try
                 {
                     this.Data.SetPixel(x, y, colour);
